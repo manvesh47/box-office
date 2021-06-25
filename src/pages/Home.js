@@ -1,13 +1,15 @@
+/* eslint-disable import/named */
 import React, { useState } from 'react';
 import MainPageLayout from '../components/MainPageLayout';
 import { apiGet } from '../misc/config';
 // eslint-disable-next-line import/no-named-as-default
 import ShowGrid from '../components/show/ShowGrid';
 import ActorGrid from '../components/actor/ActorGrid';
+import { uselastQuery } from '../misc/custom-hook';
 
 const Home = () => {
   // eslint-disable-next-line no-unused-vars
-  const [input, setInput] = useState('');
+  const [input, setInput] = uselastQuery();
   const [results, setResults] = useState(null);
   const [searchOption, setSearchOption] = useState('shows');
   const isShowSearch = searchOption === 'shows';
